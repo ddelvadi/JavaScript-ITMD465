@@ -10,7 +10,7 @@
 	  background-color: #ddd;
 	  font-family: sans-serif;
 	}
-	#main-container {
+	#main-container { 
 	  width: 750px;
 	  background-color: white;
 	  margin:0 auto;
@@ -87,71 +87,61 @@
 	  }
 
 	  function subClick() {
-		  var number1 = document.getElementById('val1').value.trim();
-		  var number2 = document.getElementById('val2').value.trim();
+		var number1 = document.getElementById('val1').value.trim();
+		var number2 = document.getElementById('val2').value.trim();
 					
-		  if (number1 == '' || isNaN(Number(number1)) == true || number2 == '' || isNaN(Number(number2)) == true) {
-		    alert('One or both values are empty or not numbers');
-		  }
-		  else {
-		    document.getElementById('results').innerHTML = Number(number1) - Number(number2);
-		  }
+		if (number1 == '' || isNaN(Number(number1)) == true || number2 == '' || isNaN(Number(number2)) == true) {
+		  alert('One or both values are empty or not numbers');
+		}
+		else {
+		  document.getElementById('results').innerHTML = Number(number1) - Number(number2);
+		}
 	  }
 
-			function multClick()
-				{
-					var number1 = document.getElementById('val1').value.trim();
-					var number2 = document.getElementById('val2').value.trim();
+	  function multClick() {
+	    var number1 = document.getElementById('val1').value.trim();
+		var number2 = document.getElementById('val2').value.trim();
 					
-					if (number1 == '' || isNaN(Number(number1)) == true || number2 == '' || isNaN(Number(number2)) == true)
-					{
-						alert('One or both values are empty or not numbers');
-					}
+		if (number1 == '' || isNaN(Number(number1)) == true || number2 == '' || isNaN(Number(number2)) == true) {
+		  alert('One or both values are empty or not numbers');
+		}
+	    else {
+		  document.getElementById('results').innerHTML = Number(number1) * Number(number2);
+		}
+	  }
 
-					else
-					{
-						document.getElementById('results').innerHTML = Number(number1) * Number(number2);
-					}
-				}
-
-			function divClick()
-				{
-					var number1 = document.getElementById('val1').value.trim();
-					var number2 = document.getElementById('val2').value.trim();
+	  function divClick() {
+		var number1 = document.getElementById('val1').value.trim();
+		var number2 = document.getElementById('val2').value.trim();
 					
-					if (number1 == '' || isNaN(Number(number1)) == true || number2 == '' || isNaN(Number(number2)) == true)
-					{
-						alert('One or both values are empty or not numbers');
-					}
+		if (number1 == '' || isNaN(Number(number1)) == true || number2 == '' || isNaN(Number(number2)) == true) {
+		  alert('One or both values are empty or not numbers');
+		}
+        else if (Number(number2) == 0) {
+		  document.getElementById('val2').value = '';
+		  document.getElementById('results').innerHTML = '';
+		  alert('Wrong input for value2');
+		}
+        else {
+		  document.getElementById('results').innerHTML = Number(number1) / Number(number2);
+		}
+	  }
 
-					else if (Number(number2) == 0)
-					{
-						document.getElementById('val2').value = '';
-						document.getElementById('results').innerHTML = '';
-						alert('Wrong input for value2');
-					}
+	  function resetClick() {
+	    document.getElementById('val1').value = '';
+		document.getElementById('val2').value = '';
+		document.getElementById('results').innerHTML = '';
+	  }
+	  document.getElementById('addBtn').addEventListener('click', addClick, false);
+	  document.getElementById('subBtn').addEventListener('click', subClick, false);
+	  document.getElementById('multBtn').addEventListener('click', multClick, false);
+	  document.getElementById('divBtn').addEventListener('click', divClick, false);
+	  document.getElementById('resetBtn').addEventListener('click', resetClick, false);
 
-					else
-					{
-						document.getElementById('results').innerHTML = Number(number1) / Number(number2);
-					}
-				}
-
-			function resetClick()
-			  {
-			    document.getElementById('val1').value = '';
-			    document.getElementById('val2').value = '';
-				document.getElementById('results').innerHTML = '';
-			  }
-			document.getElementById('addBtn').addEventListener('click', addClick, false);
-			document.getElementById('subBtn').addEventListener('click', subClick, false);
-			document.getElementById('multBtn').addEventListener('click', multClick, false);
-			document.getElementById('divBtn').addEventListener('click', divClick, false);
-			document.getElementById('resetBtn').addEventListener('click', resetClick, false);
-
-		}, false);
+	}, false);
 
 		// End JavaScript Code Here - Do not put JavaScript outside these comments.
-	</script>
+  </script>
 
-</body></html>
+</body>
+</html>
